@@ -8,6 +8,7 @@ import { CarComponent } from './car/car.component';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { carsReducer } from 'src/redux/cars.reducer';
+import { CarsService } from './cars.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,7 @@ import { carsReducer } from 'src/redux/cars.reducer';
     FormsModule,
     StoreModule.forRoot({carPage: carsReducer})
   ],
-  providers: [],
+  providers: [CarsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
