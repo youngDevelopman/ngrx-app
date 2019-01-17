@@ -35,7 +35,7 @@ export function carsReducer(state = initialState, action: CarsAction){
         case CAR_ACTION.LOAD_CARS:{
             return{
                 ...state,
-                cars: [action.payload]
+                cars: action.payload
             }
         }
         default: 
