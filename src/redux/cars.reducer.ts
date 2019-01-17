@@ -5,8 +5,6 @@ import { ActionsSubject } from '@ngrx/store';
 
 const initialState = {
     cars:[
-        new Car("Ford", "12/12/12", "Focus", false, 1),
-        new Car("Audi", "08/12/12", "A4", false, 2)
     ]
 }
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { State, Store } from '@ngrx/store';
 import { AppState } from 'src/redux/app.state';
-import { LoadCars, UpdateCar } from 'src/redux/cars.action';
+import { LoadCars, UpdateCar, AddCar } from 'src/redux/cars.action';
 import { Car} from './car.model';
 import { map, tap } from "rxjs/operators";
 import { HttpClient} from '@angular/common/http';
@@ -22,5 +22,11 @@ export class CarsService {
             this.store.dispatch(new LoadCars(data));
         })
 
+    }
+
+    addCar(car:Car){
+        this.http.post<Car>(CarsService.BASE_URL + 'cars', car).subscribe((data) =>{
+            this.store.dispatch(new AddCar(data))
+        })
     }
 }
